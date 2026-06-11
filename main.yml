@@ -1,0 +1,5 @@
+- name: role deamon
+  hosts: local
+  connection: local
+  roles:
+    - demo
