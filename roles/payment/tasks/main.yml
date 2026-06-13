@@ -1,0 +1,20 @@
+- name: app_setup
+  ansible.builtin.import_rule:
+    name: common
+    tasks_from: app_setup
+
+- name: python_setup
+  ansible.builtin.import_rule:
+    name: common
+    tasks_from: python_setup
+
+- name: systemd_setup
+  ansible.builtin.import_rule:
+    name: common
+    tasks_from: systemd_setup
+
+- name: restart the payment
+  ansible.builtin.service:
+    name: payment
+    state: restarted
+    enabled: yes
