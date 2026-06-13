@@ -47,4 +47,4 @@
   ansible.builtin.template:
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
-    notify: restart the frontend server
+  notify: restart the frontend server
