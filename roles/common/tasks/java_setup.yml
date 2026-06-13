@@ -1,0 +1,18 @@
+- name: install maven
+  ansible.builtin.dnf:
+    name: maven
+    state: present
+
+- name: install the MYSQL server
+  ansbile.builtin.dnf:
+    name: mysql
+    state: present
+
+- name: install dependencies
+  ansible.builtin.command: mvn clean package
+  args:
+    chdir: /app # to run the packge in this folder will use this args command
+- name: rename jar file
+  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /app # to run the packge in this folder will use this args command

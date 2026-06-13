@@ -1,0 +1,41 @@
+- name: app_setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app_setup.yml
+
+- name: java_setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: java_setup.yml
+
+- name: systemd_setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd_setup.yml
+
+- name: install python dependencies
+  ansible.builtin.pip:
+    name: "{{item}}"
+    executable: pip3.9
+  loop:
+    - PyMySQL
+    - cryptography
+
+- name: import shipping details
+  community.mysql.mysql_db: # by using this we can load the databases with the help of loop all at once
+    state: import
+    name: all
+    target: "{{item}}"
+    login_host: "{{MYSQL_HOST}}"
+    login_user: root
+    login_password: RoboShop@1
+  loop:
+    - /app/db/schema.sql
+    - /app/db/app-user.sql
+    - /app/db/master-data.sql
+
+- name: restart the shipping
+  ansible.builtin.service:
+    name: shipping
+    state: restarted
+    enabled: yes
