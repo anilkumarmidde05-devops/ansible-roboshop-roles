@@ -1,12 +1,10 @@
 - name: install maven
   ansible.builtin.dnf:
-    name: maven
+    name: "{ { item } }"
     state: present
-
-- name: install the MYSQL server
-  ansbile.builtin.dnf:
-    name: mysql
-    state: present
+  loop:
+    - maven
+    - mysql
 
 - name: install dependencies
   ansible.builtin.command: mvn clean package
