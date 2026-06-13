@@ -1,0 +1,5 @@
+CATALOGUE_HOST: catalogue-dev.anildevops90.online
+USER_HOST: user-dev.anildevops90.online
+CART_HOST: cart-dev.anildevops90.online
+SHIPPING_HOST: shipping-dev.anildevops90.online
+PAYMENT_HOST: payment-dev.anildevops90.online
