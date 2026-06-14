@@ -4,6 +4,6 @@
     name: common
     tasks_from: importinclude.yml
   when: os == "RedHat"
-  # loop:
-  #   - ramesh
-  #   - suresh
+  loop:
+    - ramesh
+    - suresh
