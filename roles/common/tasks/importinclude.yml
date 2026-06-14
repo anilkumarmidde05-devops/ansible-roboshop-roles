@@ -3,7 +3,7 @@
     msg: "MSG-1"
 
 - name: os the set fact
-  ansible.builtin.set-fact:
+  ansible.builtin.set_fact:
     os: "debian"
 - name: message-2
   ansible.builtin.debug:
