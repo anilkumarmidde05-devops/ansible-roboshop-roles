@@ -3,3 +3,7 @@
     #ansible.builtin.include_role:
     name: common
     tasks_from: importinclude.yml
+  when: os == "RedHat"
+  loop:
+    - ramesh
+    - suresh
