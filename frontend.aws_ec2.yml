@@ -7,5 +7,5 @@ hostnames:
 filters:
   instance-state-name: running
   tag:Name:
-    - frontend
+    - frontend-dev
     - ansible
