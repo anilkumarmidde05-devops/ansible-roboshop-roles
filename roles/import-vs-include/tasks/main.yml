@@ -1,9 +1,9 @@
 - name: importinclude roles
-  ansible.builtin.import_role:
-    #ansible.builtin.include_role:
+  #ansible.builtin.import_role:
+  ansible.builtin.include_role:
     name: common
     tasks_from: importinclude.yml
   when: os == "RedHat"
-  loop:
-    - ramesh
-    - suresh
+  # loop:
+  #   - ramesh
+  #   - suresh
