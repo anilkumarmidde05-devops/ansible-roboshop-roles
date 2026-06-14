@@ -1,0 +1,5 @@
+- name: importvsinclude roles
+  hosts: local
+  connection: local
+  roles:
+    - import-vs-include
