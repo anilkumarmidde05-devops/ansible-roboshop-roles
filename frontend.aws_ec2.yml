@@ -11,6 +11,7 @@ filters:
 
 compose: #this sets the ansible_host variable to connect with the private ip address without changing the host name
   ansible_host: private-ip-address
+  ansible_connection: local
 keyed_groups:
   - separator: ""
     key: tags.Component
