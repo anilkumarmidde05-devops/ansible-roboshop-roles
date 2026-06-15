@@ -9,3 +9,9 @@ filters:
   tag:Name:
     - frontend-dev
     - ansible
+
+compose: #this sets the ansible_host variable to connect with the private ip address without changing the host name
+  ansible_host: private-ip-address
+keyed_groups:
+  - seperator: ""
+    key: tags.Component
