@@ -3,3 +3,7 @@ USER_HOST: user-dev.anildevops90.online
 CART_HOST: cart-dev.anildevops90.online
 SHIPPING_HOST: shipping-dev.anildevops90.online
 PAYMENT_HOST: payment-dev.anildevops90.online
+
+[all-vars]:
+  ansible_user: ec2-user
+  ansible_password: DevOps321
