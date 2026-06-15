@@ -7,7 +7,7 @@ hostnames:
 filters:
   instance-state-name: running
   tag:Name:
-    - frontend-dev
+    #- frontend-dev
     - ansible
 
 compose: #this sets the ansible_host variable to connect with the private ip address without changing the host name
