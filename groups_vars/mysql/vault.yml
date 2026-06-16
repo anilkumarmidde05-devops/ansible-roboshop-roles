@@ -10,4 +10,4 @@
 
 # below is related to secret store
 #roboshop/dev/root_password we capture from the secret name after creation
-ROOT_PASSWORD: "{{ lookup('amazon.aws.aws_secret', 'roboshop/dev/root_password', region='us-east-1', bypath=true | from_json | json_query('ROOT_PASSWORD') }}"
+ROOT_PASSWORD: "{{ (lookup('amazon.aws.aws_secret', 'roboshop/dev/root_password', region='us-east-1', bypath=true) | from_json).ROOT_PASSWORD }}"
